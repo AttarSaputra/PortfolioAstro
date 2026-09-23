@@ -1,0 +1,175 @@
+---
+
+interface Experience {
+  company: string;
+  role: string;
+  period: string;
+  description: string;
+  link: string;
+  preview: string;
+  status: string;
+}
+
+const experiences: Experience[] = [
+  {
+    company: "AWBS Media",
+    role: "Paid Ads Executive",
+    period: "Apr 2025 — Present",
+    description:
+      "Managed digital ad campaigns on Meta and Google, optimized audience targeting, bidding, and budgets, and monitored performance to improve CTR, ROAS, and lead quality through testing and reporting.",
+    link: "https://github.com/AttarSaputra",
+    preview: "https://www.linkedin.com/in/muhammad-attar-syahputra/",
+    status: "Full-time",
+  },
+  {
+    company: "Englishvit",
+    role: "Full Stack Web Developer",
+    period: "Dec 2024 — Mar 2025",
+    description:
+      "Developed and maintained web applications, optimized performance, integrated APIs and databases, and collaborated with teams to deliver secure, user-focused solutions.",
+    link: "https://github.com/AttarSaputra",
+    preview: "https://www.linkedin.com/in/muhammad-attar-syahputra/",
+    status: "Contract",
+  },
+  {
+    company: "Berlima Digital",
+    role: "Marketplace Specialist",
+    period: "May 2024 — October 2024",
+    description:
+      "Managed marketplace campaigns and optimized product listings to improve visibility, traffic, and conversion performance across digital sales channels.",
+    link: "https://github.com/AttarSaputra",
+    preview: "https://www.linkedin.com/in/muhammad-attar-syahputra/",
+    status: "Contract",
+  },
+  {
+    company: "Bio Industries",
+    role: "Marketplace Advertiser",
+    period: "Aug 2022 — Jan 2024",
+    description:
+      "Managed marketplace advertising campaigns and product promotion across e-commerce channels, optimized listings and campaign performance, and supported sales growth through improved visibility and conversion-focused strategies.",
+    link: "https://github.com/AttarSaputra",
+    preview: "https://www.linkedin.com/in/muhammad-attar-syahputra/",
+    status: "Contract",
+  },
+  {
+    company: "GMEDIA",
+    role: "Full Stack Web Developer",
+    period: "Jan 2021 — Jan 2022",
+    description:
+      "Built and maintained web applications with a focus on frontend experience and backend functionality, integrated APIs, and improved product reliability through clean implementation and iterative updates.",
+    link: "https://github.com/AttarSaputra",
+    preview: "https://www.linkedin.com/in/muhammad-attar-syahputra/",
+    status: "Contract",
+  },
+  {
+    company: "Internship",
+    role: "Junior Web Developer",
+    period: "Feb 2020 — Jul 2020",
+    description:
+      "Developed basic web interfaces and supported frontend implementation, learned team workflows, and contributed to simple project updates under supervision while improving coding and UI practices.",
+    link: "https://github.com/AttarSaputra",
+    preview: "https://www.linkedin.com/in/muhammad-attar-syahputra/",
+    status: "Internship",
+  },
+];
+---
+
+<section
+  id="projects"
+  class="py-12 border-t border-[#ffffff10] text-[var(--white)]"
+>
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-lg text-[var(--sec)] mb-2 shiny-sec">Work Experience</h2>
+    <h3 class="text-4xl md:text-5xl font-medium mb-8">Experience</h3>
+
+    <div class="relative mt-8 md:mt-10">
+      <div class="absolute left-3 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
+
+      <div class="space-y-4 md:space-y-5">
+        {
+          experiences.map((experience) => (
+            <article class="experience-card group relative ml-5 w-[calc(100%-1.25rem)] rounded-[18px] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02))] p-4 shadow-[0_18px_50px_rgba(0,0,0,0.34)] backdrop-blur-2xl transition-all duration-300 ease-out hover:-translate-y-1 hover:border-[rgba(93,169,255,0.24)] hover:shadow-[0_28px_72px_rgba(0,0,0,0.45),0_0_0_1px_rgba(93,169,255,0.12)] md:p-5">
+              <div class="absolute -left-[1.05rem] top-6 h-3.5 w-3.5 rounded-full border border-white/15 bg-[var(--sec)] shadow-[0_0_18px_rgba(93,169,255,0.8)]"></div>
+              <div class="absolute inset-0 rounded-[18px] border border-white/10"></div>
+              <div class="absolute inset-x-4 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+              <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(93,169,255,0.12),transparent_34%),linear-gradient(135deg,rgba(255,255,255,0.05),transparent_60%)] opacity-90"></div>
+
+              <div class="relative">
+                <div class="flex items-start justify-between gap-3">
+                  <span class="text-[9px] font-medium uppercase tracking-[0.24em] text-[var(--white-icon)]">
+                    {experience.status}
+                  </span>
+
+                  <div class="flex items-center gap-2 shrink-0">
+                    <a
+                      target="_blank"
+                      href={experience.link}
+                      aria-label="GitHub"
+                      class="flex size-8 items-center justify-center rounded-xl border border-white/10 bg-[#111111]/80 text-[var(--white-icon)] transition duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:text-white"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="size-3.5"
+                      >
+                        <path d="M24 12L18.3431 17.6569L16.9289 16.2426L21.1716 12L16.9289 7.75736L18.3431 6.34315L24 12ZM2.82843 12L7.07107 16.2426L5.65685 17.6569L0 12L5.65685 6.34315L7.07107 7.75736L2.82843 12ZM9.78845 21H7.66009L14.2116 3H16.3399L9.78845 21Z" />
+                      </svg>
+                    </a>
+                    <a
+                      target="_blank"
+                      href={experience.preview}
+                      aria-label="Preview"
+                      class="flex size-8 items-center justify-center rounded-xl border border-white/10 bg-[#111111]/80 text-[var(--white-icon)] transition duration-300 hover:-translate-y-0.5 hover:border-white/20 hover:text-white"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        class="size-3.5"
+                      >
+                        <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+
+                <h4 class="mt-3 text-2xl font-semibold leading-tight text-white md:text-[1.8rem]">
+                  {experience.role}
+                </h4>
+
+                <div class="mt-2 flex flex-wrap items-center gap-2 text-sm text-[var(--white-icon)] md:text-base">
+                  <span class="font-medium text-[var(--white)]">{experience.company}</span>
+                  <span class="opacity-60">•</span>
+                  <span>{experience.period}</span>
+                </div>
+
+                <p class="mt-3 text-sm leading-relaxed text-[var(--white-icon)] md:text-base">
+                  {experience.description}
+                </p>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+
+    <a
+      target="_blank"
+      href="https://www.linkedin.com/in/muhammad-attar-syahputra/"
+      aria-label="Resume"
+      class="mt-10 flex w-full items-center justify-center gap-2 rounded-full border border-[var(--white-icon-tr)] bg-[#1414149c] p-3 text-[var(--white-icon)] transition duration-300 ease-in-out hover:scale-[1.01] hover:bg-[var(--white-icon-tr)] hover:text-white"
+    >
+      <span class="text-md md:text-lg">Resume</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        class="size-6"
+      >
+        <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z" />
+      </svg>
+    </a>
+  </div>
+</section>
+
