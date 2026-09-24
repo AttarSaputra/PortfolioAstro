@@ -14,9 +14,9 @@ const SkillsList = () => {
 
   const skills = {
     "Web Development": [
-      "Single Page Applications (SPAs)",
-      "Landing pages and business websites",
-      "Portfolio websites",
+      "Full-Stack Architecture",
+      "Database & API Integration",
+      "High-Performance Web Apps",
     ],
     "Digital Marketing": [
       "Meta and Google ads campaign management",
@@ -31,7 +31,7 @@ const SkillsList = () => {
 
   return (
     <div className="text-left pt-3 md:pt-9">
-      <h3 className="text-[var(--white)] text-3xl md:text-4xl font-semibold md:mb-6">
+      <h3 className="text-[var(--white)] text-3xl md:text-4xl font-semibold md:mb-6 tracking-[-0.03em]">
         What I do?
       </h3>
       <ul className="space-y-4 mt-4 text-lg">
@@ -39,13 +39,15 @@ const SkillsList = () => {
           <li key={category} className="w-full">
             <div
               onClick={() => toggleItem(category)}
-              className="md:w-[400px] w-full bg-[#1414149c] rounded-2xl text-left hover:bg-opacity-80 transition-all border border-[var(--white-icon-tr)] cursor-pointer overflow-hidden"
+              className={`md:w-[400px] w-full text-left cursor-pointer overflow-hidden rounded-2xl border border-white/10 bg-[radial-gradient(circle_at_top_left,_rgba(93,169,255,0.12),_transparent_38%),_linear-gradient(180deg,_rgba(20,20,20,0.88),_rgba(12,12,12,0.96))] shadow-[0_12px_28px_rgba(0,0,0,0.28),inset_0_1px_0_rgba(255,255,255,0.06)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--sec)]/30 hover:shadow-[0_16px_32px_rgba(12,18,32,0.38),0_0_0_1px_rgba(93,169,255,0.12)] ${
+                openItem === category ? "border-[var(--sec)]/40" : ""
+              }`}
             >
-              <div className="flex items-center gap-3 p-4">
-                {CategoryIcons[category as keyof typeof CategoryIcons]}
+              <div className="relative flex items-center gap-3 p-4 before:absolute before:left-0 before:top-2 before:bottom-2 before:w-[2px] before:rounded-full before:bg-[var(--sec)] before:opacity-80 before:shadow-[0_0_16px_rgba(93,169,255,0.7)]">
+                <div className="ml-2">{CategoryIcons[category as keyof typeof CategoryIcons]}</div>
                 <div className="flex items-center gap-2 flex-grow justify-between">
                   <div className="min-w-0 max-w-[200px] md:max-w-none overflow-hidden">
-                    <span className="block truncate text-[var(--white)] text-lg">
+                    <span className="block truncate text-[var(--white)] text-lg font-medium tracking-[0.02em]">
                       {category}
                     </span>
                   </div>
@@ -53,7 +55,7 @@ const SkillsList = () => {
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     fill="currentColor"
-                    className={`w-6 h-6 text-[var(--white)] transform transition-transform flex-shrink-0 ${
+                    className={`w-6 h-6 text-[var(--white)] transform transition-transform duration-300 flex-shrink-0 ${
                       openItem === category ? "rotate-180" : ""
                     }`}
                   >
@@ -69,11 +71,11 @@ const SkillsList = () => {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <ul className="space-y-2 text-[var(--white-icon)] text-sm">
+                <ul className="space-y-2 text-[var(--white-icon)] text-sm leading-relaxed">
                   {items.map((item, index) => (
-                    <div key={index} className="flex items-center">
-                      <span className="pl-1">•</span>
-                      <li className="pl-3">{item}</li>
+                    <div key={index} className="flex items-center rounded-lg px-2 py-1 transition-colors hover:bg-white/5">
+                      <span className="text-[var(--sec)] text-base">•</span>
+                      <li className="pl-3 tracking-[0.01em]">{item}</li>
                     </div>
                   ))}
                 </ul>
